@@ -1,0 +1,34 @@
+{
+    "name": "alengo/sulu-mcp-server-bundle",
+    "description": "Read-only HTTP API exposing local Sulu template XML files (pages, articles, blocks, snippets, properties) for use by MCP servers.",
+    "type": "symfony-bundle",
+    "homepage": "https://github.com/alengodev/SuluMcpServerBundle",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Alexander Huber-De Monte"
+        }
+    ],
+    "support": {
+        "issues": "https://github.com/alengodev/SuluMcpServerBundle/issues",
+        "source": "https://github.com/alengodev/SuluMcpServerBundle"
+    },
+    "require": {
+        "php": "^8.2",
+        "symfony/config": "^7.0",
+        "symfony/dependency-injection": "^7.0",
+        "symfony/framework-bundle": "^7.0",
+        "symfony/http-foundation": "^7.0",
+        "symfony/http-kernel": "^7.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "Alengo\\SuluMcpServerBundle\\": "src/"
+        }
+    },
+    "extra": {
+        "symfony": {
+            "require": "^7.0"
+        }
+    }
+}
