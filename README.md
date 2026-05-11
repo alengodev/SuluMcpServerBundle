@@ -4,12 +4,12 @@ Read-only HTTP API exposing local Sulu template XML files (pages, articles, bloc
 
 ## What it does
 
-Provides two authenticated endpoints:
+Provides two authenticated endpoints mounted under the project's admin API prefix (typically `/admin/api`):
 
 | Method | Path | Returns |
 |---|---|---|
-| `GET` | `/api/mcp/templates/{type}` | JSON list of template names available for a type |
-| `GET` | `/api/mcp/templates/{type}/{name}` | Raw XML body of a single template |
+| `GET` | `/admin/api/mcp/templates/{type}` | JSON list of template names available for a type |
+| `GET` | `/admin/api/mcp/templates/{type}/{name}` | Raw XML body of a single template |
 
 All requests require an `Authorization: Bearer <token>` header. If the token is not configured (or empty), the API is fully disabled and returns `403`.
 
@@ -29,7 +29,8 @@ Import the routing in `config/routes/alengo_mcp_server.yaml`:
 
 ```yaml
 alengo_mcp_server:
-    resource: "@McpServerBundle/Resources/config/routing.yaml"
+    resource: "@McpServerBundle/Resources/config/routing_admin_api.yaml"
+    prefix: /admin/api
 ```
 
 Set the bearer token in `.env.local`:

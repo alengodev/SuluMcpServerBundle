@@ -1,12 +1,12 @@
 alengo_mcp_server_templates_list:
-    path: /api/mcp/templates/{type}
+    path: /mcp/templates/{type}
     controller: Alengo\SuluMcpServerBundle\Controller\TemplateController::listAction
     methods: [GET]
     requirements:
         type: '[a-z]+'
 
 alengo_mcp_server_templates_show:
-    path: /api/mcp/templates/{type}/{name}
+    path: /mcp/templates/{type}/{name}
     controller: Alengo\SuluMcpServerBundle\Controller\TemplateController::showAction
     methods: [GET]
     requirements:
