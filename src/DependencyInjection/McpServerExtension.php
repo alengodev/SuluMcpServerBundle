@@ -18,7 +18,6 @@ class McpServerExtension extends Extension
 
         $controllerDef = new Definition(TemplateController::class);
         $controllerDef->addArgument('%kernel.project_dir%');
-        $controllerDef->addArgument($config['token']);
         $controllerDef->addArgument($config['template_dirs']);
         $controllerDef->setPublic(true);
 

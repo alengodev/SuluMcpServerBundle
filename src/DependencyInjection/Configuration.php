@@ -15,10 +15,6 @@ class Configuration implements ConfigurationInterface
 
         $treeBuilder->getRootNode()
             ->children()
-                ->scalarNode('token')
-                    ->info('Bearer token required in the Authorization header in addition to the Sulu admin session. Empty string disables the API.')
-                    ->defaultValue('%env(string:default::MCP_SERVER_TOKEN)%')
-                ->end()
                 ->arrayNode('template_dirs')
                     ->info('Template type => directory mapping. Paths are relative to %kernel.project_dir%.')
                     ->useAttributeAsKey('type')
