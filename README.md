@@ -1,6 +1,8 @@
 # SuluMcpServerBundle
 
-Read-only HTTP API exposing local Sulu template XML files (pages, articles, blocks, snippets, properties) for use by an MCP (Model Context Protocol) server.
+Read-only HTTP API exposing local Sulu template XML files (pages, articles, blocks, snippets) for use by an MCP (Model Context Protocol) server.
+
+> ✅ Built for **Sulu 2.6** (Symfony 6.x / 7.x, PHP ≥ 8.2).
 
 ## What it does
 
@@ -45,11 +47,10 @@ To override defaults, create `config/packages/alengo_mcp_server.yaml`:
 alengo_mcp_server:
     # Template type => directory mapping (paths relative to %kernel.project_dir%).
     template_dirs:
-        page:     config/templates/pages
-        article:  config/templates/articles
-        block:    config/templates/blocks/content
-        snippet:  config/templates/snippets
-        property: config/templates/properties
+        page:    config/templates/pages
+        article: config/templates/articles
+        block:   config/templates/includes/blocks
+        snippet: config/templates/snippets
 ```
 
 You can add additional template types by extending `template_dirs` — the controller will resolve any configured type.
@@ -59,12 +60,13 @@ You can add additional template types by extending `template_dirs` — the contr
 - **Admin firewall.** The path lives under `/admin/api/*`, so the standard Sulu admin firewall (`^/admin`) applies. Requests without a valid admin session are rejected with `401` and never reach the controller.
 - **Read-only.** No write endpoints.
 
-## Requirements
+## Compatibility
 
-| Package | Version |
-|---|---|
-| PHP | `^8.2` |
-| Symfony | `^7.0` |
+| Sulu | Symfony | PHP |
+|---|---|---|
+| `2.6` | `6.x` · `7.x` | `≥ 8.2` |
+
+Requires `sulu/sulu: ^2.6` and `symfony/*: ^6.0 || ^7.0`.
 
 ## License
 

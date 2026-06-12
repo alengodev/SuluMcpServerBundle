@@ -22,9 +22,8 @@ class Configuration implements ConfigurationInterface
                     ->defaultValue([
                         'page' => 'config/templates/pages',
                         'article' => 'config/templates/articles',
-                        'block' => 'config/templates/blocks/content',
+                        'block' => 'config/templates/includes/blocks',
                         'snippet' => 'config/templates/snippets',
-                        'property' => 'config/templates/properties',
                     ])
                 ->end()
             ->end()
